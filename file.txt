@@ -1,5 +1,151 @@
-example example example example example example
-example
- example
-  example
-   example
+/**
+ * @class CS.components.form.response
+ * Componente para a apresentação da resposta da requisição feita via ajax
+ * @singleton
+ */
+<div__class="style-one"> var Response = function() {};</div>
+
+Response.prototype.init = function(form, message, type) {
+  /**
+   * @cfg  {HTMLElement} form (required)
+   *
+   */
+  <div__class="style-two">this.form;</div>
+  /**
+   * @cfg  {String} message
+   * Caso não receba uma valor , por default ele recebe o valou null.
+   */
+  <div__class="style-two">this.message = message || null;</div>
+  /**
+   * @cfg  {String} type
+   *
+   */
+  <div__class="style-two">this.type = type || null;</div>
+  /**
+   * @cfg {String} responseClass
+   *
+   */
+  <div__class="style-two">this.responseClass = '.form-response';</div>
+  /**
+   * @cfg {String} alertClass
+   *
+   */
+  <div__class="style-two">this.alertClass = '.alert';</div>
+  /**
+   * @cfg {String} alertMessageClass
+   *
+   */
+  <div__class="style-two">this.alertMessageClass = '.alert-message';</div>
+  /**
+   * @cfg {String} closeAlertClass
+   *
+   */
+  <div__class="style-two">this.closeAlertClass = '.js-form-response';</div>
+  /**
+   * @cfg {String} hide
+   *
+   */
+  <div__class="style-two">this.hide = 'hide';</div>
+  /**
+   * @cfg {String} show
+   *
+   */
+  <div__class="style-two">this.show = 'show';</div>
+  /**
+   * @cfg {Array} typesResponse
+   *
+   */
+  <div__class="style-two">this.typesResponse = ['success', 'error'];</div>
+  /**
+   * @property {Object} response
+   * @property {Object} response.success
+   * @property {String} response.success.class
+   * @property {String} response.success.message
+   * @property {Object} response.error
+   * @property {String} response.error.class
+   * @property {String} response.error.message
+   *
+   */
+  <div__class="style-two">this.response = {
+    success: {
+      class: 'alert--success',
+      message: 'Sua solicitação foi enviada com sucesso.'
+    },
+    error: {
+      class: 'alert--error',
+      message: 'Erro. Tente novamente.'
+    }
+  };</div>
+
+  <div__class="style-two">this.$form = $(form);</div>
+  <div__class="style-two">this.$boxAlert = this.$form.find(this.responseClass);</div>
+  <div__class="style-two">this.$alert = this.$boxAlert.children(this.alertClass);</div>
+  <div__class="style-two">this.$alertMessage = this.$alert.find(this.alertMessageClass);</div>
+  <div__class="style-two">this.$closeAlert = this.$alert.find(this.closeAlertClass);</div>
+
+  <div__class="style-two">this.actionResponse();</div>
+  <div__class="style-two">this.addEventListeners();</div>
+
+};
+
+Response.prototype.addEventListeners = function() {
+  /**
+   * @event clickHide
+   * Quando o botão de fechar é clicado
+   * @param {Object} this
+   */
+  this.$closeAlert
+    .on("click", this.onClickHide.bind(this));
+};
+
+Response.prototype.actionResponse = function() {
+  this.existingAlertRemove(this.type);
+  this.actionShow(this.message, this.type);
+};
+
+Response.prototype.existingAlertRemove = function(type) {
+  var
+    types = this.typesResponse,
+    typeResponse = null,
+    objTypeResponse = null;
+
+  for (var i = 0, len = types.length; i < len; i++) {
+    if (type !== types[i]) {
+      typeResponse = types[i];
+      objTypeResponse = this.response[typeResponse];
+
+      if (this.$alert.hasClass(objTypeResponse.class)) {
+        this.$alert.removeClass(objTypeResponse.class);
+      }
+    }
+  }
+
+  //this.actionHide();
+};
+
+Response.prototype.actionHide = function() {
+  var me = this;
+  this.$alertMessage.html('');
+  this.$boxAlert.fadeOut('slow', function() {
+    $(this).removeClass(me.show).addClass(me.hide);
+  });
+};
+
+Response.prototype.actionShow = function(message, type) {
+  type = type || 'error';
+  var objTypeResponse = this.response[type];
+  this.message = this.message ? this.message : objTypeResponse.message;
+
+  if (!this.$alert.hasClass(objTypeResponse.class)) {
+    this.$alert.addClass(objTypeResponse.class);
+  }
+
+  this.$alertMessage.html(this.message);
+  this.$boxAlert.fadeIn().removeClass(this.hide).addClass(this.show);
+};
+
+Response.prototype.onClickHide = function() {
+  this.actionHide();
+};
+
+module.exports = Response;
