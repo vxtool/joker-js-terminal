@@ -1,0 +1,28 @@
+{
+  "name": "joker-js-terminal",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joker-solutions/joker-js-terminal.git"
+  },
+  "keywords": [
+    "joker",
+    "terminal",
+    "front-end"
+  ],
+  "author": "Hemerson Vianna <hemerson.lourenco@gmail.com> (http://descco.com.br)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joker-solutions/joker-js-terminal/issues"
+  },
+  "homepage": "https://github.com/joker-solutions/joker-js-terminal#readme",
+  "devDependencies": {
+    "express": "^4.14.0"
+  }
+}
