@@ -1,5 +1,14 @@
 body{
-  background: #000;
-  color: #fff;
+  background: #272822;
+  color: #cacaca;
   font-family: Arial;
+  font-size: 12px;
+}
+
+.style-one {
+  color: #a7032e;
+}
+
+.style-two {
+  color: #8dd006;
 }
