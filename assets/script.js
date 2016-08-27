@@ -4,7 +4,7 @@ var Joker = {
 	countTimer : null,
 	index      : 0,
 	speed      : 3,
-	file       : "file.txt",
+	file       : "./assets/file.txt",
 	init: function(){
   	countTimer = setInterval(function(){
       Joker.updateLastCharacter();
