@@ -1,7 +1,12 @@
 # JavaScript in the terminal
 
 [![licence mit](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](http://hemersonvianna.mit-license.org/)
-[![issues](https://img.shields.io/github/issues/joker-solutions/joker-js-terminal.svg?style=flat-square)](https://github.com/joker-solutions/joker-js-terminal/issues)
+[![GitHub issues](https://img.shields.io/github/issues/org-victorinox/joker-js-terminal.svg)](https://github.com/org-victorinox/joker-js-terminal/issues)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/org-victorinox/joker-js-terminal.svg)
+![GitHub Release Date](https://img.shields.io/github/release-date/org-victorinox/joker-js-terminal.svg)
+![GitHub top language](https://img.shields.io/github/languages/top/org-victorinox/joker-js-terminal.svg)
+![GitHub repo size](https://img.shields.io/github/repo-size/org-victorinox/joker-js-terminal.svg)
+![GitHub All Releases](https://img.shields.io/github/downloads/org-victorinox/joker-js-terminal/total.svg)
 
 ## Install
 
@@ -25,7 +30,7 @@ npm start
 
 ## Log
 
-Check [Releases](https://github.com/joker-solutions/joker-js-terminal/releases) for detailed changelog.
+Check [Releases](https://github.com/org-victorinox/joker-js-terminal/releases) for detailed changelog.
 
 ## License
 
